@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure</title>
+  </head>
+
+  <body style="background-color: #313131">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+
+    <script>
+      // document.getElementById("orange").onclick = function () {
+      //     document.body.style.backgroundColor = "orange";
+      //   };
+      //   document.getElementById("green").onclick = function () {
+      //     document.body.style.backgroundColor = "green";
+      //   };
+
+      function clickHandler(color) {
+        // document.body.style.backgroundColor = `${color}` it does not work here because button pr click kiye beghair hi ye hme orange ya green color de raha so we have to define it in a function for controlled way of using
+
+        return function () {
+          document.body.style.backgroundColor = `${color}`; // this function has access of color from parent function due to closure or lexical scoping
+        };
+      }
+
+      //   document.getElementById('orange').onclick = clickHandler   .....here clcikHandler acts as function reference..it means it said ke me aap ko function ka definition de deta lkin koi action perform nhi kro ga.
+
+      document.getElementById("orange").onclick = clickHandler("orange");
+      document.getElementById("green").onclick = clickHandler("green");
+    </script>
+  </body>
+</html>

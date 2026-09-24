@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure</title>
+  </head>
+  <body style="background-color: #313131">
+    <h1 style="background-color: #7b4747">Closure Practice</h1>
+    <script>
+      function init() {
+        let name = "Mozilla"; // name is a local variable created by init
+        function displayName() {
+          // displayName() is the inner function, that forms a closure
+          console.log(name); // use variable declared in the parent function
+        }
+        displayName();
+      }
+      init(); // also imp to call outer function until we can't call outer function inner function not showing result
+
+      function outer() {
+        let username = "nimra";
+        // console.log(secret); it gives error..child can't give anything to parent.
+        function inner() {
+          let secret = "my123";
+          console.log("inner", username);
+        }
+        function innerTwo() {
+          console.log("innerTwo", username);
+          // console.log(secret);  will give error because it a variable of inner function not parent function
+        }
+        inner();
+        innerTwo();
+        console.log("Outer", username);
+      }
+      outer();
+
+      function makeFunc() {
+        const name = "Mozilla T";
+        function displayName() {
+          console.log(name);
+          return name;
+        }
+        // return displayName(); The issue is that makeFunc returns undefined because you are executing the displayName function inside the return statement instead of returning the function itself.
+        return displayName;
+      }
+
+      const myFunc = makeFunc();
+      console.log(myFunc());
+
+      function makeFunc2() {
+        const name = "Mozilla R";
+        function displayName() {
+          console.log(name);
+        }
+        return displayName;
+      }
+
+      const myFunc2 = makeFunc2();
+      myFunc2();
+
+      function makeFunc3() {
+        const name = "Mozilla S";
+        function displayName() {
+          return name;
+        }
+        return displayName;
+      }
+
+      const myFunc3 = makeFunc3();
+      console.log(myFunc3());
+    </script>
+  </body>
+</html>
