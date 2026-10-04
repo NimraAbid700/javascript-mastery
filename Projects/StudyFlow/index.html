@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudyFlow</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>StudyFlow</h1>
+        <p>Study smarter, stay consistent.</p>
+      </div>
+      <button type="button" id="theme-btn">☀️</button>
+    </header>
+
+    <main>
+      <section>
+        <h2>Dashboard</h2>
+        <article>
+          <h3>Total Sessions</h3>
+          <p id="total-sessions">0</p>
+        </article>
+        <article>
+          <h3>Completed Sessions</h3>
+          <p id="completed-sessions">0</p>
+        </article>
+
+        <article>
+          <h3>Study Time</h3>
+          <p id="study-time">0 hrs</p>
+        </article>
+
+        <article>
+          <h3>Focus Time</h3>
+          <p id="focus-time">0 min</p>
+        </article>
+      </section>
+
+      <section class="timer-card">
+        <h2>Study Timer</h2>
+
+        <label for="timer-duration">Study Duration (minutes)</label>
+
+        <input type="number" id="timer-duration" min="1" value="25" max="180" />
+        <p id="timer-display">25:00</p>
+        <p id="timer-message"></p>
+
+        <div class="timer-controls">
+          <button id="start-timer">Start</button>
+          <button id="pause-timer">Pause</button>
+          <button id="reset-timer">Reset</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Add Study Sessions</h2>
+        <form id="session-form">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required />
+
+          <label for="topic">Topic</label>
+          <input type="text" id="topic" name="topic" required />
+
+          <label for="duration">Duration</label>
+          <input type="number" id="duration" name="duration" required />
+
+          <label for="priority">Priority</label>
+          <select name="priority" id="priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+
+          <button type="submit">Add Session</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Study Sessions</h2>
+
+        <div class="session-filters">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search by subject or topic..."
+            aria-label="Search study sessions"
+          />
+          <select id="priority-filter" aria-label="Filter by priority">
+            <option value="all">All Priorities</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+
+        <div id="session-list">
+          <!-- JavaScript will generate session cards here -->
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
