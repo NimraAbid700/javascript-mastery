@@ -62,11 +62,13 @@ This project helped me practice and apply:
 
 ### Dashboard
 
-![StudyFlow Dashboard](images/studyflow-dashboard.png)
+![StudyFlow Dashboard](images/<img width="908" height="379" alt="Screenshot 2026-10-04 162259" src="https://github.com/user-attachments/assets/c2fd7ab0-f1f3-4621-88d6-b0dd4faddc6a" />
+)
 
 ### Dark Mode
 
-![StudyFlow Dark Mode](images/studyflow-dark-mode.png)
+![StudyFlow Dark Mode](images/<img width="897" height="382" alt="Screenshot 2026-10-04 162427" src="https://github.com/user-attachments/assets/41487376-d397-4e0c-aaa4-8ec6e85d3f9b" />
+)
 
 ## 📂 Project Structure
 
